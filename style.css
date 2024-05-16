@@ -18,6 +18,7 @@ body {
     border-radius: 20px;
     padding: 40px 35px;
     text-align: center;
+    height: 600px; /* Fixed height for consistency */
 }
 
 .search {
@@ -61,12 +62,12 @@ body {
 
 .weather h1 {
     font-size: 80px;
-    font-weight: 500; 
+    font-weight: 500;
 }
 
 .weather h2 {
     font-size: 45px;
-    font-weight: 400; 
+    font-weight: 400;
     margin-top: -10px;
 }
 
@@ -89,7 +90,20 @@ body {
     margin-right: 10px;
 }
 
-.humindity, .wind {
+.humindity,
+.wind {
     font-size: 28px;
     margin-top: -6px;
+}
+
+/* .weather {
+    display: none;
+} */
+
+.error {
+    text-align: left;
+    margin-left: 10px;
+    font-size: 14px;
+    margin-top: 10px;
+    display: none;
 }

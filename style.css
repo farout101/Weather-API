@@ -19,6 +19,7 @@ body {
     padding: 40px 35px;
     text-align: center;
     height: 600px; /* Fixed height for consistency */
+    user-select: none;
 }
 
 .search {

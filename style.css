@@ -107,3 +107,10 @@ body {
     margin-top: 10px;
     display: none;
 }
+
+.error_info {
+    text-align: center;
+    margin-top: 150px;
+    padding: 10px;
+    display: none;
+}

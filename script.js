@@ -12,12 +12,9 @@ async function checkWeather(city) {
 
 	if (response.status === 404) {
 		document.querySelector(".error").style.display = "block";
-		document.querySelector(".city").innerHTML = "unknown";
-		document.querySelector(".temp").innerHTML = 0 + "°C";
-		document.querySelector(".humidity").innerHTML = 0 + "%";
-		document.querySelector(".wind").innerHTML = 0 + " km/h";
+		document.querySelector(".weather").style.display = "none";
+        document.querySelector(".error_info").style.display = "block";
 
-		weatherIcon.src = "images/search.png";
 	} else {
 		var data = await response.json();
 
@@ -39,7 +36,9 @@ async function checkWeather(city) {
 		}
 
 		document.querySelector(".error").style.display = "none";
-	}
+        document.querySelector(".weather").style.display = "block";
+        document.querySelector(".error_info").style.display = "none";
+    }   
 }
 
 window.addEventListener("load", () => {

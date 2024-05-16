@@ -13,8 +13,7 @@ async function checkWeather(city) {
 	if (response.status === 404) {
 		document.querySelector(".error").style.display = "block";
 		document.querySelector(".weather").style.display = "none";
-        document.querySelector(".error_info").style.display = "block";
-
+		document.querySelector(".error_info").style.display = "block";
 	} else {
 		var data = await response.json();
 
@@ -36,9 +35,9 @@ async function checkWeather(city) {
 		}
 
 		document.querySelector(".error").style.display = "none";
-        document.querySelector(".weather").style.display = "block";
-        document.querySelector(".error_info").style.display = "none";
-    }   
+		document.querySelector(".weather").style.display = "block";
+		document.querySelector(".error_info").style.display = "none";
+	}
 }
 
 window.addEventListener("load", () => {
@@ -46,11 +45,23 @@ window.addEventListener("load", () => {
 });
 
 searchBtn.addEventListener("click", () => {
-	checkWeather(searchBox.value);
+    if (searchBox.value === "") {
+        document.querySelector(".error").style.display = "block";
+        document.querySelector(".weather").style.display = "none";
+        document.querySelector(".error_info").style.display = "block";
+    } else {
+        checkWeather(searchBox.value);
+    }
 });
 
 searchBox.addEventListener("keydown", (event) => {
-	if (event.key === "Enter") {
-		checkWeather(searchBox.value);
-	}
+    if (event.key === "Enter") {
+        if (searchBox.value === "") {
+            document.querySelector(".error").style.display = "block";
+            document.querySelector(".weather").style.display = "none";
+            document.querySelector(".error_info").style.display = "block";
+        } else {
+            checkWeather(searchBox.value);
+        }
+    }
 });
